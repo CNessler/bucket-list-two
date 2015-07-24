@@ -1,0 +1,15 @@
+extends layout
+block content
+  h1.center See Your Bucket!
+  if errors
+    each err in errors
+      p= err
+  form(action='/login' method='post')
+    p
+    label Username
+    p
+      input(type='text' name='user')
+    label Password
+    p
+      input(type='password' name='pass')
+    input.submit(type='submit' value='Login')

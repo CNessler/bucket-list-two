@@ -1,0 +1,39 @@
+extends ../layout
+block content
+  h1 Add A New Item
+  form.new(action='/bucket/new' method='post')
+    p
+    label Title
+    p
+      input.input(type='text' name='title')
+    label Location
+    p
+      input.input(type='text' name='location')
+    label Description
+    p
+      input.input(type='textarea' name='description')
+    label.cen Solo
+    
+      input(type='checkbox' name='checkbox' value='solo') 
+    label Others  
+    p 
+      input(type='checkbox' name='checkbox' value='others') 
+    label Cost
+    p
+      select.input
+        option(value='')
+        option(value='free') Free!
+        option(value='cheap') Sort of cheap
+        option(value='save') I'll need to save
+        option(value='expensive') Expensive
+        option(value='retire') When I retire
+    fieldset   
+      legend Difficulty
+      span Easy
+      input(type='radio' value='1' name='diff') 
+      input(type='radio' value='2' name='diff')
+      input(type='radio' value='3' name='diff')
+      input(type='radio' value='4' name='diff')
+      input(type='radio' value='5' name='diff')
+      span Hard
+    input.submit(type='submit' value='Add To Bucket')

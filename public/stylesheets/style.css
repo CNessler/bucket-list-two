@@ -6,3 +6,57 @@ body {
 a {
   color: #00B7FF;
 }
+.center {
+  text-align: center;
+}
+form {
+  background-color: rgba(000,000,000, 0.1);
+  border-radius: 10px;
+  padding-left: 50px;
+  width: 40%;
+  padding-top: 20px;
+  padding-bottom: 55px;
+  margin: 0 auto;
+  /*text-align: center;*/
+}
+
+label {
+	float: left;
+	text-align: left;
+	margin-right: 15px;
+	width: 200px;
+  font-size: 20px;
+  display: inline;
+}
+
+.input {
+    line-height: 1.7;
+    width: 50%;
+}
+
+.submit{
+  /*position: absolute;*/
+  width: 20%;
+  float: right;
+  margin-top: 5%;
+  margin-right: 5%;
+  /*margin-left: 35%;*/
+}
+
+.new label{
+	float: left;
+	text-align: right;
+	margin-right: 15px;
+	width: 25%;
+}
+
+fieldset {
+  margin-left: 28%;
+  width: 45%;
+  text-align: center;
+}
+
+.cen {
+  padding-left: 17%;
+  display: inline-block;
+}

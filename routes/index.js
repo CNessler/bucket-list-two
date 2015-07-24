@@ -65,7 +65,7 @@ router.get('/bucket/new', function (req, res, next) {
 })
 
 router.post('/bucket/new', function (req, res, next) {
-  buckets.insert({title: req.body.title, location: req.body.location, description: req.body.description})
+  buckets.insert({title: req.body.title, location: req.body.location, description: req.body.description, cost: req.body.cost, difficulty: req.body.diff, people: req.body.checkbox, userId: req.session.user})
   res.redirect('/bucket/home')
 })
 

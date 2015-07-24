@@ -4,23 +4,24 @@ block content
     input(type='submit' value='Logout')
   h1 Check Out Your Bucket 
   a(href='/bucket/new') Add To Your Bucket 
-  table
-    thead
-      tr
-        th Title
-        th Location
-        th Description
-        th Edit
-        th Delete
-    tbody
-      each item in items
+  if items
+    table
+      thead
         tr
-          td
-            a(href='/bucket/' + item._id)= item.title
-          td= item.location
-          td= item.description
-          td
-            a(href='/bucket/'+ item._id +'/edit') Edit
-          td
-            form(action='/bucket/'+ item._id +'/delete' method='post')
-              input(type='submit' value='Remove Item From Bucket')
+          th Title
+          th Location
+          th Description
+          th Edit
+          th Delete
+      tbody
+        each item in items
+          tr
+            td
+              a(href='/bucket/' + item._id)= item.title
+            td= item.location
+            td= item.description
+            td
+              a(href='/bucket/'+ item._id +'/edit') Edit
+            td
+              form(action='/bucket/'+ item._id +'/delete' method='post')
+                input(type='submit' value='Remove Item From Bucket')

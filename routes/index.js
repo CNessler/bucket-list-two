@@ -1,7 +1,9 @@
 var express = require('express');
 var router = express.Router();
 var db = require('monk')(process.env.MONGOLAB_URI);
-var bucket = db.get('list');
+var bucket = db.get('buckets');
+var users = db.get('users');
+var cookieSession = require('cookie-session');
 var bcrypt = require('bcryptjs');
 
 /* GET home page. */

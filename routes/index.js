@@ -48,7 +48,8 @@ router.post('/login', function (req, res, next) {
 
 router.get('/bucket/home', function (req, res, next) {
   if(req.session.user){
-  buckets.find({}, function (err, items) {
+    console.log(req.session.user);
+  buckets.find({userId: req.session.user}, function (err, items) {
   res.render('bucket/home', {items: items})
   })
   } else {
@@ -76,7 +77,7 @@ router.get('/bucket/:id/edit', function (req, res, next) {
 })
 
 router.post('/bucket/:id', function (req, res, next) {
-  buckets.update({_id: req.params.id}, {title: req.body.title, location: req.body.location, description: req.body.description})
+  buckets.update({_id: req.params.id}, {title: req.body.title, location: req.body.location, description: req.body.description, cost: req.body.cost, difficulty: req.body.diff, people: req.body.checkbox, userId: req.session.user})
   res.redirect('/bucket/home')
 })
 

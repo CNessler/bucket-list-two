@@ -1,0 +1,11 @@
+extends ../layout
+block content
+  h1 Edit This Item
+  form(action='/bucket/'+item._id method='post')
+    label Title
+      input(type='text' name='title' value='#{item.title}')
+    label Location
+      input(type='text' name='location' value='#{item.location}')
+    label Description
+      input(type='textarea' name='description' value='#{item.description}')
+    input(type='submit' value='Edit This Item')

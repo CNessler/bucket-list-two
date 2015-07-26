@@ -1,7 +1,7 @@
 extends ../layout
 block content
   form(action='/logout' method='post')
-    input(type='submit' value='Logout')
+    input.logout(type='submit' value='Logout')
   h1 Check Out Your Bucket 
   a(href='/bucket/new') Add To Your Bucket 
   if items

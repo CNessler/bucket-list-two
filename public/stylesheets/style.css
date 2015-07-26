@@ -2,7 +2,11 @@ body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-
+.logout {
+  font-size: 30px;
+  border-style: none;
+  background-color: white;
+}
 .err {
   color: red;
   text-align: center;
@@ -18,7 +22,7 @@ a {
 .center {
   text-align: center;
 }
-form {
+.form {
   background-color: rgba(000,000,000, 0.1);
   border-radius: 10px;
   padding-left: 50px;

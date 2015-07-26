@@ -3,6 +3,15 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+.err {
+  color: red;
+  text-align: center;
+}
+
+.login {
+  font-size: 25px;
+  text-align: center;
+}
 a {
   color: #00B7FF;
 }

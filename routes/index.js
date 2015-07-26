@@ -15,8 +15,8 @@ router.get('/', function(req, res, next) {
 router.post('/', function (req, res, next) {
   var userName = req.body.user;
   var errorCheck = validate.signup(req.body.user, req.body.pass, req.body.passCheck);
-  if (errorCheck.length > 0){
-    res.render('index', {errors: errorCheck})
+  if (errorCheck.length > 0 || users.find({username: userName})){
+    res.render('index', {errors: errorCheck, entry: 'Username already exists'})
   } else {
     var crypted = bcrypt.hashSync(req.body.pass, 8)
     users.insert({username: req.body.user, password: crypted})

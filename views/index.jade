@@ -4,7 +4,9 @@ block content
   h1.center Create Your Bucket List
   if errors
     each err in errors
-      p= err
+      p.err= err
+  if entry
+    p.err= entry
   form(action='/' method='post')
     p
     label.text Username
@@ -20,5 +22,5 @@ block content
       input.input(type='password' name='passCheck')
       
     input.submit(type='submit' value='Signup')
-  p.center Or....  
-    a.center(href='/login') Login 
+  p.center 
+    a.login(href='/login') Login 

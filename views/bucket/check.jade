@@ -1,12 +1,8 @@
 extends ../layout
 block content
-  div.header
-    div.row
-      form(action='/logout' method='post')
-        input.logout(type='submit' value='Logout')
   div.content
     div.eighty  
-      h1.title Check Out Your Bucket 
+      h1 Check Out Your Bucket 
       if items
         table
           thead
@@ -14,6 +10,8 @@ block content
               th Title
               th Location
               th Description
+              th Completed!
+              th Delete
           tbody
             each item in items
               tr
@@ -21,17 +19,12 @@ block content
                   a(href='/bucket/' + item._id)= item.title
                 td= item.location
                 td= item.description
+                td
+                  input#check(type='checkbox') 
+                td
+                  form(action='/bucket/'+ item._id +'/delete' method='post')
+                    input(type='submit' value='Remove Item From Bucket')
     div.twenty       
       a(href='/bucket/new') Add To Your Bucket
       p
-      a(href='/bucket/edit') Edit Your Bucket
-      p
-      a(href='/bucket/check') Check Em Off
-  div.content
-    if complete
-        div.complete
-          h1= complete.title
-          p= complete.location
-          p= complete.description
-  //- script(src='/javascripts/dom.js')    
-        
+      a(href='/bucket/home') Back to Your Bucket

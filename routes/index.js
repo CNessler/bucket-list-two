@@ -3,6 +3,7 @@ var router = express.Router();
 var db = require('monk')(process.env.MONGOLAB_URI);
 var buckets = db.get('buckets');
 var users = db.get('users');
+var completes = db.get('completes');
 var bcrypt = require('bcryptjs');
 var validate = require('../public/javascripts/validate.js')
 var cookieSession = require('cookie-session');
@@ -85,6 +86,16 @@ router.get('/bucket/:id/editOne', function (req, res, next) {
   })
 })
 
+router.get('/bucket/check', function (req, res, next) {
+  if(req.session.user){
+    buckets.find({userId: req.session.user}, function (err, items) {
+    res.render('bucket/check', {items:items})
+    })
+  } else {
+    res.redirect('/')
+  }
+})
+
 router.post('/bucket/:id', function (req, res, next) {
   buckets.update({_id: req.params.id}, {title: req.body.title, location: req.body.location, description: req.body.description, cost: req.body.cost, difficulty: req.body.diff, people: req.body.checkbox, userId: req.session.user})
   res.redirect('/bucket/home')
@@ -105,4 +116,11 @@ router.post('/logout', function (req, res, next) {
   req.session = null;
   res.redirect('/')
 })
+
+router.post('/bucket/:id/complete', function (req, res, next) {
+  buckets.findOne({_id: req.params.id}, function (err, complete) {
+  res.redirect('/bucket/home', {complete: complete})
+  })
+})
+
 module.exports = router;

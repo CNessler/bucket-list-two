@@ -1,17 +1,17 @@
 extends ../layout
 block content
   h1 Add A New Item
-  form.form.new(action='/bucket/new' method='post')
+  form.form.new(action='/bucket/'+item._id method='post')
     p
     label Title
     p
-      input.input(type='text' name='title')
+      input.input(type='text' name='title' value='#{item.title}')
     label Location
     p
-      input.input(type='text' name='location')
+      input.input(type='text' name='location' value='#{item.location}')
     label Description
     p
-      textarea.input(name='description')
+      textarea.input(name='description').innerHTML= item.description
     label.cen Solo
     
       input(type='checkbox' name='checkbox' value='solo') 
@@ -36,4 +36,4 @@ block content
       input(type='radio' value='4' name='diff')
       input(type='radio' value='5' name='diff')
       span Hard
-    input.submit(type='submit' value='Add To Bucket')
+    input.submit(type='submit' value='Edit Item')

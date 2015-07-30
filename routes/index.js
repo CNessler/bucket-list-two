@@ -70,9 +70,18 @@ router.post('/bucket/new', function (req, res, next) {
   res.redirect('/bucket/home')
 })
 
-router.get('/bucket/:id/edit', function (req, res, next) {
+router.get('/bucket/edit', function (req, res, next) {
+  if(req.session.user){
+  buckets.find({userId: req.session.user}, function (err, items) {
+  res.render('bucket/edit', {items: items})
+  })
+  } else {
+    res.redirect('/')
+  }
+})
+router.get('/bucket/:id/editOne', function (req, res, next) {
   buckets.findOne({_id: req.params.id}, function (err, item) {
-    res.render('bucket/edit', {item: item})
+    res.render('bucket/editOne', {item: item})
   })
 })
 

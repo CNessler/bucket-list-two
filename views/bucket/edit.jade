@@ -1,11 +1,31 @@
 extends ../layout
 block content
-  h1 Edit This Item
-  form.form(action='/bucket/'+item._id method='post')
-    label Title
-      input(type='text' name='title' value='#{item.title}')
-    label Location
-      input(type='text' name='location' value='#{item.location}')
-    label Description
-      input(type='textarea' name='description' value='#{item.description}')
-    input(type='submit' value='Edit This Item')
+
+  div.eighty  
+    h1 Check Out Your Bucket 
+    if items
+      table
+        thead
+          tr
+            th Title
+            th Location
+            th Description
+            th Edit
+            th Delete
+        tbody
+          each item in items
+            tr
+              td
+                a(href='/bucket/' + item._id)= item.title
+              td= item.location
+              td= item.description
+              td
+                a(href='/bucket/'+ item._id +'/editOne') Edit Info
+              td
+                form(action='/bucket/'+ item._id +'/delete' method='post')
+                  input(type='submit' value='Remove Item From Bucket')
+  div.twenty       
+    a(href='/bucket/new') Add To Your Bucket
+    p
+    a(href='/bucket/home') Back to Your Bucket
+        

@@ -1,11 +1,59 @@
 body {
-  padding: 50px;
+  padding: none;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: blue;
+}
+html {
+  padding: none;
+}
+.content {
+  width: 960px;
+  margin: 0 auto;
+  background-color: yellow;
+  /*display: inline-block;*/
+}
+.header {
+  width: 100%;
+  background-color: blue;
+}
+.row {
+  margin: 0 auto;
+  width: 960px;
+}
+.eighty {
+  width: 80%;
+  display: inline-block;
+}
+.title {
+  text-align: center;
+}
+table {
+  width: 100%;
+}
+th {
+  width: 33.33%;
+  font-size: 18px;
+}
+tr {
+  width: 100%;
+  text-align: center;
+  vertical-align: top;
+}
+td {
+  padding-top: 10px;
+}
+.twenty {
+  width: 20%;
+  /*float: right;*/
+  margin-top: 5%;
+  text-align: center;
+  display: inline-block;
 }
 .logout {
   font-size: 30px;
   border-style: none;
   background-color: white;
+  border: 3px solid black;
 }
 .err {
   color: red;
@@ -25,7 +73,6 @@ a {
 .form {
   background-color: rgba(000,000,000, 0.1);
   border-radius: 10px;
-  padding-left: 50px;
   width: 40%;
   padding-top: 20px;
   padding-bottom: 55px;
@@ -35,7 +82,7 @@ a {
 
 label {
 	float: left;
-	text-align: left;
+	text-align: right;
 	margin-right: 15px;
 	width: 200px;
   font-size: 20px;
@@ -53,6 +100,7 @@ label {
   float: right;
   margin-top: 5%;
   margin-right: 5%;
+  font-size: 20px;
   /*margin-left: 35%;*/
 }
 

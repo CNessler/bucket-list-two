@@ -26,6 +26,10 @@ router.post('/', function (req, res, next) {
   }
 })
 
+router.get('/create', function (req, res, next) {
+  res.render('create')
+})
+
 router.get('/login', function (req, res, next) {
   res.render('login')
 })

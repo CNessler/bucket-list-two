@@ -10,17 +10,18 @@ block content
               th Title
               th Location
               th Description
-              th Completed!
+              th 
+                button(id='comp') Completed!
               th Delete
           tbody
             each item in items
               tr
                 td
                   a(href='/bucket/' + item._id)= item.title
-                td= item.location
-                td= item.description
+                td.item= item.location
+                td.itemume= item.description
                 td
-                  input#check(type='checkbox') 
+                  input.check(type='checkbox') 
                 td
                   form(action='/bucket/'+ item._id +'/delete' method='post')
                     input(type='submit' value='Remove Item From Bucket')
@@ -28,3 +29,4 @@ block content
       a(href='/bucket/new') Add To Your Bucket
       p
       a(href='/bucket/home') Back to Your Bucket
+  script(src='/javascripts/dom.js')    

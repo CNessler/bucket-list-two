@@ -1,24 +1,9 @@
 extends layout
 
 block content
-  h1.center Create Your Bucket List
-  if errors
-    each err in errors
-      p= err
-  form.form(action='/' method='post')
-    p
-    label.text Username
-    p
-      input.input(type='text' name='user')
-      
-    label.text Password
-    p
-      input.input(type='password' name='pass')
-      
-    label.text Confirm Password
-    p
-      input.input(type='password' name='passCheck')
-      
-    input.submit(type='submit' value='Signup')
-  p.center 
-    a.login(href='/login') Login 
+  div.home
+    h1 Remember Your Dreams 
+    a#login(href='/login') Login
+
+    a#signUp(href='/create') Sign Up
+    script(src='/javascripts/dom.js')

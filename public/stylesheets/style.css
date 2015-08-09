@@ -1,7 +1,7 @@
 body {
   padding: none;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: blue;
+  background-color: #414066;
 }
 
 html {
@@ -12,27 +12,30 @@ html {
   margin: 0 auto;
   height: auto;
   text-align: center;
+  padding-top: 15%;
+  color:#CEFF1A;
+  font-size: 35px;
 }
 #login, #signUp {
   text-align: center;
   display: inline-block;
-  width: 200px;
+  width: 250px;
   border-radius: 10px;
   height: 50px;
   font-size: 30px;
   text-decoration: none;
-  background-color: green;
-  margin: 20px;
+  background-color: #CEFF1A;
+  margin: 30px;
 }
 .content {
   width: 960px;
   margin: 0 auto;
-  background-color: yellow;
+  background-color: #82816D;
   /*display: inline-block;*/
 }
 .header {
   width: 100%;
-  background-color: blue;
+  background-color: #414066;
 }
 .row {
   margin: 0 auto;
@@ -83,7 +86,8 @@ td {
   text-align: center;
 }
 a {
-  color: #00B7FF;
+  color: #414066;
+  padding-top: 10px;
 }
 .center {
   text-align: center;

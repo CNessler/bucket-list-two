@@ -16,6 +16,16 @@ html {
   color:#CEFF1A;
   font-size: 35px;
 }
+.create {
+  width:960px;
+  margin: 0 auto;
+  height: auto;
+  text-align: center;
+  padding-top: 8%;
+  color:#CEFF1A;
+  font-size: 35px;
+}
+
 #login, #signUp {
   text-align: center;
   display: inline-block;
@@ -81,9 +91,23 @@ td {
   text-align: center;
 }
 
+.login:hover{
+  color: #82816D;
+}
+.submit:hover {
+  background-color: #414066;
+}
+ #login:hover, #signUp:hover{
+   background-color: #82816D;
+ }
+
 .login {
   font-size: 25px;
-  text-align: center;
+  text-align: right;
+  color: #CEFF1A;
+  text-decoration: none;
+  font-size: 35px;
+  padding: 20px;
 }
 a {
   color: #414066;
@@ -93,9 +117,10 @@ a {
   text-align: center;
 }
 .form {
-  background-color: rgba(000,000,000, 0.1);
+  background-color: #CEFF1A;
+
   border-radius: 10px;
-  width: 40%;
+  width: 100%;
   padding-top: 20px;
   padding-bottom: 55px;
   margin: 0 auto;
@@ -103,27 +128,31 @@ a {
 }
 
 label {
-	float: left;
+	/*float: left;
 	text-align: right;
 	margin-right: 15px;
 	width: 200px;
-  font-size: 20px;
-  display: inline;
+  font-size: 30px;
+  display: inline;*/
+  color: #414066;
 }
 
 .input {
-    line-height: 1.7;
+    line-height: 2.0;
     width: 50%;
+    border-radius: 10px;
+    font-size: 22px;
+    text-align: center;
 }
 
 .submit{
-  /*position: absolute;*/
-  width: 20%;
-  float: right;
-  margin-top: 5%;
-  margin-right: 5%;
-  font-size: 20px;
-  /*margin-left: 35%;*/
+  border: 20px;
+  padding: 20px;
+  background-color: #82816D;
+  color: #CEFF1A;
+  border-radius: 10px;
+  width: 30%;
+  font-size: 30px;
 }
 
 .new label{
